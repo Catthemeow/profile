@@ -23,9 +23,9 @@ $point-color-2: #fcf8e3;
 		justify-content: center;
 		align-items: center;
 		position: fixed;
+		top: 0;
 		left: 0;
 		right: 0;
-		top: 0;
 		bottom: 0;
 		z-index: 1000;
 		background: $pri-color-3;
@@ -37,12 +37,55 @@ $point-color-2: #fcf8e3;
 			height: 64px;
 			text-indent: -9999px;
 			background-image: url('../images/loading.gif');
-			transform: translate(-50%, -50%);
+			// transform: translate(-50%, -50%);
 		}
 	} //end of .loading
-	/*
 	> h1 {
-		display: block;
-	}
-    */
+		position: absolute;
+		top: 160px;
+		left: 50%;
+		z-index: 100;
+		color: $pri-color-3;
+		font-size: 24px;
+		text-transform: uppercase;
+		transform: translate(-50%, 0);
+	} // end of h1
+	> section#home {
+		position: relative;
+		overflow: hidden;
+		> .intro {
+			position: absolute;
+			left: 0;
+			top: 35%;
+			width: 100%;
+			text-align: center;
+			// border: 3px solid #fff;
+			> h2 {
+				color: $pri-color-2;
+				font-size: 60px;
+				line-height: 80px;
+				> span {
+					color: $sec-color-1;
+				}
+			} //end of h2
+			> p {
+				margin-top: 24px;
+				color: $pri-color-3;
+				line-height: 1.8;
+			}
+		} //end of .intro
+		> figure.bgmov {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: -1;
+			width: 100%;
+			> video {
+				min-width: 100%;
+				min-height: 100%;
+			}
+		} // end of figuer.bgmov
+	} // end of section#home
 } //end of #wrap

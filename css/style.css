@@ -1,19 +1,14 @@
 #wrap {
   min-width: 1200px;
-  /*
-  > h1 {
-  	display: block;
-  }
-     */
 }
 #wrap > .loading {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
   bottom: 0;
   z-index: 1000;
   background: #ffffff;
@@ -23,5 +18,51 @@
   height: 64px;
   text-indent: -9999px;
   background-image: url("../images/loading.gif");
-  transform: translate(-50%, -50%);
+}
+#wrap > h1 {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  z-index: 100;
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: uppercase;
+  transform: translate(-50%, 0);
+}
+#wrap > section#home {
+  position: relative;
+  overflow: hidden;
+}
+#wrap > section#home > .intro {
+  position: absolute;
+  left: 0;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+}
+#wrap > section#home > .intro > h2 {
+  color: #52b3d9;
+  font-size: 60px;
+  line-height: 80px;
+}
+#wrap > section#home > .intro > h2 > span {
+  color: #68c3a3;
+}
+#wrap > section#home > .intro > p {
+  margin-top: 24px;
+  color: #ffffff;
+  line-height: 1.8;
+}
+#wrap > section#home > figure.bgmov {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+}
+#wrap > section#home > figure.bgmov > video {
+  min-width: 100%;
+  min-height: 100%;
 }/*# sourceMappingURL=style.css.map */

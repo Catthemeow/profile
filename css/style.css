@@ -1,4 +1,5 @@
 #wrap {
+  position: relative;
   min-width: 1200px;
 }
 #wrap > .loading {
@@ -6,78 +7,94 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
   left: 0;
   right: 0;
+  top: 0;
   bottom: 0;
   z-index: 1000;
-  background: #ffffff;
+  background-color: #ffffff;
 }
 #wrap > .loading > p {
   width: 64px;
   height: 64px;
   text-indent: -9999px;
-  background-image: url("../images/loading.gif");
+  background-image: url(./../images/loading.gif);
 }
 #wrap > h1 {
   position: absolute;
-  top: 160px;
   left: 50%;
+  top: 160px;
   z-index: 100;
   color: #ffffff;
   font-size: 24px;
   text-transform: uppercase;
   transform: translate(-50%, 0);
 }
-#wrap > section#home {
-  position: relative;
+#wrap > #home {
   overflow: hidden;
+  position: relative;
 }
-#wrap > section#home:before {
+#wrap > #home:before {
   display: block;
   width: 100%;
   height: 100%;
   background-color: #333333;
-  opacity: 0.7;
+  opacity: 0.5;
   content: "";
 }
-#wrap > section#home > .intro {
+#wrap > #home > .intro {
   position: absolute;
   left: 0;
   top: 35%;
   width: 100%;
   text-align: center;
 }
-#wrap > section#home > .intro > h2 {
+#wrap > #home > .intro > h2 {
   color: #52b3d9;
   font-size: 60px;
   line-height: 80px;
 }
-#wrap > section#home > .intro > h2 > span {
+#wrap > #home > .intro > h2 > span {
   color: #68c3a3;
 }
-#wrap > section#home > .intro > p {
+#wrap > #home > .intro > p {
   margin-top: 24px;
   color: #ffffff;
   line-height: 1.8;
+  letter-spacing: 1px;
 }
-@keyframes mousewheel {
-  0% {
-    top: 5px;
-    opacity: 0;
-  }
-  30% {
-    top: 7px;
-  }
-  100% {
-    top: 10px;
-    opacity: 100%;
-  }
+#wrap > #home > .intro > .myico {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  margin: 40px auto 0;
 }
-#wrap > section#home > .mouse {
+#wrap > #home > .intro > .myico > span {
+  display: block;
+  width: 40px;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  transition: all 0.4s;
+}
+#wrap > #home > .intro > .myico > span:hover {
+  background-color: #52b3d9;
+  border-color: transparent;
+  cursor: pointer;
+}
+#wrap > #home > .intro > .myico > span > i {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  transform: rotate(-45deg);
+}
+#wrap > #home > .mouse {
   position: absolute;
   left: 50%;
-  top: 40px;
+  bottom: 40px;
   width: 30px;
   height: 50px;
   border: 2px solid #ffffff;
@@ -85,7 +102,21 @@
   border-radius: 15px;
   transform: translate(-50%, 0);
 }
-#wrap > section#home > .mouse > .wheel {
+@keyframes mousewheel {
+  0% {
+    top: 2px;
+    opacity: 0;
+  }
+  30% {
+    top: 5px;
+    opacity: 1;
+  }
+  100% {
+    top: 10px;
+    opacity: 0;
+  }
+}
+#wrap > #home > .mouse > .wheel {
   position: absolute;
   left: 50%;
   top: 5px;
@@ -97,16 +128,16 @@
   transform: translate(-50%, 0);
   animation: mousewheel 1s linear infinite;
 }
-#wrap > section#home > figure.bgmov {
+#wrap > #home > .bgmov {
   position: absolute;
-  top: 0;
   left: 0;
-  bottom: 0;
   right: 0;
+  top: 0;
+  bottom: 0;
   z-index: -1;
   width: 100%;
 }
-#wrap > section#home > figure.bgmov > video {
+#wrap > #home > .bgmov > video {
   min-width: 100%;
   min-height: 100%;
 }/*# sourceMappingURL=style.css.map */

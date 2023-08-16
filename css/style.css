@@ -33,6 +33,7 @@
 #wrap > #home {
   overflow: hidden;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 #wrap > #home:before {
   display: block;
@@ -142,8 +143,16 @@
   min-height: 100%;
 }
 #wrap > header {
+  width: 100%;
+  min-width: 1200px;
   background-color: #ffffff;
   border-bottom: 1px solid #eeeeee;
+}
+#wrap > header.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
 }
 #wrap > header > .container {
   position: relative;
@@ -193,10 +202,10 @@
   text-transform: uppercase;
 }
 #wrap header ~ section:nth-of-type(odd) {
-  height: 500px;
+  height: 800px;
   background-color: skyblue;
 }
 #wrap header ~ section:nth-of-type(even) {
-  height: 800px;
+  height: 500px;
   background-color: pink;
 }/*# sourceMappingURL=style.css.map */

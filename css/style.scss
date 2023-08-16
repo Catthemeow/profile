@@ -12,6 +12,13 @@ $sec-color-3: #eeeeee;
 $point-color-1: #ffc90e;
 $point-color-2: #fcf8e3;
 
+//믹신 변수 -반복되는 코드 덩어리
+// mixsin 사용법 @include transTop();
+@mixin transTop {
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
 #wrap {
 	position: relative;
 	min-width: 1200px;
@@ -181,4 +188,72 @@ $point-color-2: #fcf8e3;
 			}
 		} //end of .bgmov
 	} //end of #home
+	> header {
+		background-color: $pri-color-3;
+		border-bottom: 1px solid $sec-color-3;
+
+		> .container {
+			position: relative;
+			height: 66px;
+
+			> h2 {
+				position: absolute;
+				left: 7%;
+				@include transTop();
+				background-image: url('../images/logo.png');
+				background-repeat: no-repeat;
+				// border: 1px solid #000;
+
+				> a {
+					display: block;
+					height: 32px;
+					color: $point-color-1;
+					line-height: 32px;
+					text-indent: 40px;
+					text-transform: uppercase;
+				}
+			}
+			> nav {
+				position: absolute;
+				right: 7%;
+				@include transTop();
+				// display: none;
+				> .gnb {
+					display: flex;
+					> li {
+						> a {
+							display: block;
+							padding: 0 15px;
+							color: darken($sec-color-3, $amount: 70%);
+							font-weight: 500;
+							text-transform: uppercase;
+							transition: all 0.3s;
+						} //end of a
+						&:hover,
+						&.on {
+							> a {
+								color: $pri-color-2;
+							}
+						}
+					} //end of li
+				} //end of gnb
+			} //end of nav
+		} //end of container
+	}
+	header ~ section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 150px;
+		text-transform: uppercase;
+
+		&:nth-of-type(odd) {
+			height: 500px;
+			background-color: skyblue;
+		}
+		&:nth-of-type(even) {
+			height: 800px;
+			background-color: pink;
+		}
+	}
 } //end of #wrap

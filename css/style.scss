@@ -18,10 +18,14 @@ $point-color-2: #fcf8e3;
 	top: 50%;
 	transform: translate(0, -50%);
 }
-
+$mobile: 'screen and (max-width:640px)';
 #wrap {
 	position: relative;
 	min-width: 1200px;
+
+	@media #{$mobile} {
+		min-width: 100%;
+	}
 
 	> .loading {
 		display: flex;
@@ -51,7 +55,7 @@ $point-color-2: #fcf8e3;
 	> h1 {
 		position: absolute;
 		left: 50%;
-		top: 160px;
+		// top: 160px; : 탑값은 js에서 동적으로 설정
 		z-index: 100;
 		color: $pri-color-3;
 		font-size: 24px;
@@ -64,6 +68,13 @@ $point-color-2: #fcf8e3;
 		overflow: hidden;
 		position: relative;
 		transition: all 0.3s ease-in-out;
+
+		@media #{$mobile} {
+			background-image: url('../images/visual.jpg');
+			background-position: center center;
+			background-size: contain;
+		}
+
 		&:before {
 			display: block;
 			width: 100%;
@@ -78,17 +89,28 @@ $point-color-2: #fcf8e3;
 			left: 0;
 			top: 35%;
 			width: 100%;
-
 			text-align: center;
 			// border: 1px solid #fff;
+
+			@media #{$mobile} {
+				top: 25%;
+				margin-bottom: 30px;
+			}
 
 			> h2 {
 				color: $pri-color-2;
 				font-size: 60px;
 				line-height: 80px;
 
+				@media #{$mobile} {
+					font-size: 38px;
+					line-height: 50px;
+				}
 				> span {
 					color: $sec-color-1;
+					@media #{$mobile} {
+						display: block;
+					}
 				}
 			} //end of h2
 
@@ -97,6 +119,12 @@ $point-color-2: #fcf8e3;
 				color: $pri-color-3;
 				line-height: 1.8;
 				letter-spacing: 1px;
+
+				> span {
+					@media #{$mobile} {
+						display: block;
+					}
+				}
 			} //end of p
 
 			> .myico {
@@ -105,6 +133,9 @@ $point-color-2: #fcf8e3;
 				width: 320px;
 				margin: 40px auto 0;
 
+				@media #{$mobile} {
+					margin-top: 80px;
+				}
 				> span {
 					display: block;
 					width: 40px;
@@ -142,6 +173,10 @@ $point-color-2: #fcf8e3;
 			box-sizing: border-box;
 			border-radius: 15px;
 			transform: translate(-50%, 0);
+
+			@media #{$mobile} {
+				display: none;
+			}
 
 			@keyframes mousewheel {
 				0% {
@@ -182,6 +217,9 @@ $point-color-2: #fcf8e3;
 			z-index: -1;
 			width: 100%;
 
+			@media #{$mobile} {
+				display: none;
+			}
 			> video {
 				min-width: 100%;
 				min-height: 100%;
@@ -194,6 +232,9 @@ $point-color-2: #fcf8e3;
 		background-color: $pri-color-3;
 		border-bottom: 1px solid $sec-color-3;
 
+		@media #{$mobile} {
+			min-width: 100%;
+		}
 		&.fixed {
 			position: fixed;
 			left: 0;
@@ -225,7 +266,13 @@ $point-color-2: #fcf8e3;
 				position: absolute;
 				right: 7%;
 				@include transTop();
-				// display: none;
+
+				@media #{$mobile} {
+					right: inherit;
+					left: 0;
+					top: 66px;
+					background-color: #ff0;
+				}
 				> .gnb {
 					display: flex;
 					> li {
@@ -236,6 +283,10 @@ $point-color-2: #fcf8e3;
 							font-weight: 500;
 							text-transform: uppercase;
 							transition: all 0.3s;
+
+							@media #{$mobile} {
+								padding: 0;
+							}
 						} //end of a
 						&:hover,
 						&.on {
@@ -255,6 +306,9 @@ $point-color-2: #fcf8e3;
 		font-size: 150px;
 		text-transform: uppercase;
 
+		@media #{$mobile} {
+			font-size: 64px;
+		}
 		&:nth-of-type(odd) {
 			height: 800px;
 			background-color: skyblue;

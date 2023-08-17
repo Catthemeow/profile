@@ -12,13 +12,14 @@ $sec-color-3: #eeeeee;
 $point-color-1: #ffc90e;
 $point-color-2: #fcf8e3;
 
-//믹신 변수 -반복되는 코드 덩어리
-// mixsin 사용법 @include transTop();
+//믹신변수 - 반복되는 코드 덩어리
 @mixin transTop {
 	top: 50%;
 	transform: translate(0, -50%);
 }
+
 $mobile: 'screen and (max-width:640px)';
+
 #wrap {
 	position: relative;
 	min-width: 1200px;
@@ -41,10 +42,6 @@ $mobile: 'screen and (max-width:640px)';
 		background-color: $pri-color-3;
 
 		> p {
-			// position: absolute;
-			// left: 50%;
-			// top: 50%;
-			// transform: translate(-50%, -50%);
 			width: 64px;
 			height: 64px;
 			text-indent: -9999px;
@@ -55,7 +52,7 @@ $mobile: 'screen and (max-width:640px)';
 	> h1 {
 		position: absolute;
 		left: 50%;
-		// top: 160px; : 탑값은 js에서 동적으로 설정
+		// top 값은 JS에서 동적으로 설정
 		z-index: 100;
 		color: $pri-color-3;
 		font-size: 24px;
@@ -70,9 +67,10 @@ $mobile: 'screen and (max-width:640px)';
 		transition: all 0.3s ease-in-out;
 
 		@media #{$mobile} {
-			background-image: url('../images/visual.jpg');
+			background-image: url(./../images/visual.jpg);
 			background-position: center center;
-			background-size: contain;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 
 		&:before {
@@ -90,11 +88,10 @@ $mobile: 'screen and (max-width:640px)';
 			top: 35%;
 			width: 100%;
 			text-align: center;
-			// border: 1px solid #fff;
 
 			@media #{$mobile} {
 				top: 25%;
-				margin-bottom: 30px;
+				padding-bottom: 30px;
 			}
 
 			> h2 {
@@ -106,8 +103,10 @@ $mobile: 'screen and (max-width:640px)';
 					font-size: 38px;
 					line-height: 50px;
 				}
+
 				> span {
 					color: $sec-color-1;
+
 					@media #{$mobile} {
 						display: block;
 					}
@@ -136,6 +135,7 @@ $mobile: 'screen and (max-width:640px)';
 				@media #{$mobile} {
 					margin-top: 80px;
 				}
+
 				> span {
 					display: block;
 					width: 40px;
@@ -180,15 +180,15 @@ $mobile: 'screen and (max-width:640px)';
 
 			@keyframes mousewheel {
 				0% {
-					top: 2px;
+					top: 5px;
 					opacity: 0;
 				}
 				30% {
-					top: 5px;
+					top: 10px;
 					opacity: 1;
 				}
 				100% {
-					top: 10px;
+					top: 20px;
 					opacity: 0;
 				}
 			}
@@ -220,13 +220,15 @@ $mobile: 'screen and (max-width:640px)';
 			@media #{$mobile} {
 				display: none;
 			}
+
 			> video {
 				min-width: 100%;
 				min-height: 100%;
 			}
 		} //end of .bgmov
 	} //end of #home
-	> header {
+
+	header {
 		width: 100%;
 		min-width: 1200px;
 		background-color: $pri-color-3;
@@ -235,12 +237,14 @@ $mobile: 'screen and (max-width:640px)';
 		@media #{$mobile} {
 			min-width: 100%;
 		}
+
 		&.fixed {
 			position: fixed;
 			left: 0;
 			top: 0;
 			z-index: 1000;
 		}
+
 		> .container {
 			position: relative;
 			height: 66px;
@@ -248,74 +252,342 @@ $mobile: 'screen and (max-width:640px)';
 			> h2 {
 				position: absolute;
 				left: 7%;
-				@include transTop();
-				background-image: url('../images/logo.png');
+				@include transTop; //믹신변수 활용
+				background-image: url(./../images/logo.png);
 				background-repeat: no-repeat;
-				// border: 1px solid #000;
 
 				> a {
 					display: block;
 					height: 32px;
-					color: $point-color-1;
+					color: $pri-color-1;
 					line-height: 32px;
 					text-indent: 40px;
 					text-transform: uppercase;
 				}
 			}
+
+			//반응형 햄버거 버튼
+			> button {
+				display: none;
+
+				@media #{$mobile} {
+					background: none;
+					border: none;
+					outline: none;
+
+					display: block;
+					position: absolute;
+					right: 7%;
+					@include transTop;
+					width: 24px;
+					height: 18px;
+					text-indent: -9999px;
+					background-image: url(./../images/mnu_btn.png);
+					background-position: center center;
+					background-repeat: no-repeat;
+
+					&.clse {
+						background-image: url(./../images/clse_btn.png);
+					}
+				}
+			} //end of button
+
 			> nav {
 				position: absolute;
 				right: 7%;
-				@include transTop();
+				@include transTop;
 
 				@media #{$mobile} {
-					right: inherit;
+					// background-color: yellow;
+					display: none;
+					right: initial;
 					left: 0;
 					top: 66px;
-					background-color: #ff0;
+					width: 100%;
+					transform: initial; //
+					border-top: 1px solid black;
 				}
+
 				> .gnb {
 					display: flex;
+					@media #{$mobile} {
+						display: initial;
+					}
+
 					> li {
+						@media #{$mobile} {
+							background-color: $pri-color-3;
+							border-bottom: 1px solid black;
+						}
+
 						> a {
 							display: block;
 							padding: 0 15px;
-							color: darken($sec-color-3, $amount: 70%);
+							color: darken($sec-color-3, 70%);
 							font-weight: 500;
 							text-transform: uppercase;
-							transition: all 0.3s;
+							transition: all 0.2s;
 
 							@media #{$mobile} {
+								height: 48px;
 								padding: 0;
+								line-height: 48px;
+								text-indent: 7%;
 							}
 						} //end of a
-						&:hover,
-						&.on {
-							> a {
-								color: $pri-color-2;
-							}
+
+						&:hover > a,
+						&.on > a {
+							color: $pri-color-2;
 						}
 					} //end of li
-				} //end of gnb
+				} //end of .gnb
 			} //end of nav
-		} //end of container
-	}
+		} //end of .container
+	} //end of header
+
 	header ~ section {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 150px;
-		text-transform: uppercase;
+		padding-top: 80px;
+		// outline: 1px solid red;
+
+		> h2 {
+			color: $pri-color-1;
+			font-size: 50px;
+			line-height: 50px;
+			text-align: center;
+			&:after {
+				display: block;
+				width: 138px;
+				height: 15px;
+				margin: 30px auto 0;
+				background-image: url(./../images/deco_tit.png);
+				content: '';
+			}
+		} //end of h2
+	} //end of header ~ section
+	#aboutme {
+		> .container {
+			display: flex;
+			flex-direction: row-reverse;
+			padding-bottom: 30px;
+
+			@media #{$mobile} {
+				display: block;
+				padding-bottom: 0;
+			}
+
+			> .profile {
+				width: 33.33333%;
+				@media #{$mobile} {
+					width: 100%;
+				}
+				> div {
+					position: relative;
+					width: 360px;
+					margin: 0 auto;
+					border: 1px solid darken($sec-color-3, 10%);
+					border-radius: 0 0 10px 10px;
+
+					@media #{$mobile} {
+						width: 95%;
+						margin-top: 50px;
+					}
+
+					&:after {
+						display: block;
+						position: absolute;
+						left: 0;
+						bottom: -3px;
+						width: 100%;
+						height: 20px;
+						border-bottom: 1px solid darken($sec-color-3, 10%);
+						border-radius: 0 0 10px 10px;
+						content: '';
+					}
+
+					> .myphoto {
+						overflow: hidden;
+						background-image: url(./../images/aboutme/photo-frame.png);
+						background-position: 0 bottom;
+						background-size: contain;
+						background-repeat: no-repeat;
+
+						> img {
+							display: block;
+							position: relative;
+							z-index: -1;
+							width: 120%;
+							margin: -100px 0 0 -30px;
+						}
+					} //end of .myphoto
+
+					> ol {
+						padding: 0 20px;
+
+						> li {
+							height: 45px;
+							font-weight: 300;
+							font-size: 16px;
+							line-height: 45px;
+							border-bottom: 1px solid $sec-color-3;
+
+							&:last-child {
+								border-bottom-width: 0;
+							}
+						}
+					} //end of ol
+				} //end of div
+			} //end of .profile
+
+			> .biography {
+				width: 66.66666%;
+
+				@media #{$mobile} {
+					width: 100%;
+					margin-top: 48px;
+				}
+
+				> .detail {
+					margin-bottom: 64px;
+					padding-left: 10%;
+
+					@media #{$mobile} {
+						padding: 0 5%;
+					}
+					@media #{$mobile} {
+					}
+					> h3 {
+						margin-bottom: 30px;
+						font-weight: 500;
+						font-size: 32px;
+					}
+
+					> p {
+						margin-bottom: 20px;
+						font-weight: 300;
+						font-size: 14px;
+
+						@media #{$mobile} {
+							line-height: 1.4;
+							> br {
+								display: none;
+							}
+						}
+						> mark {
+							background-color: $point-color-2;
+						}
+					} //end of p
+
+					> .ican {
+						margin-top: 80px;
+						@media #{$mobile} {
+							margin-top: 50px;
+						}
+						> li {
+							font-size: 16px;
+							line-height: 40px;
+
+							&:before {
+								margin-right: 10px;
+								color: $pri-color-2;
+								font-family: 'Font Awesome 5 Free';
+								content: '\f14a';
+							}
+						}
+					} //end of .ican
+				} //end of .detail
+			} //end of .biography
+		} //end of .container
+	} //end of #aboutme
+	> footer {
+		min-width: 1200px;
 
 		@media #{$mobile} {
-			font-size: 64px;
+			min-width: 100%;
 		}
-		&:nth-of-type(odd) {
-			height: 800px;
-			background-color: skyblue;
-		}
-		&:nth-of-type(even) {
-			height: 500px;
-			background-color: pink;
-		}
-	}
+
+		> .working {
+			border-top: 1px solid black;
+
+			> p {
+				height: 80px;
+				padding-left: 7%;
+				line-height: 80px;
+
+				> a {
+					margin: 0 30px;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			} //end of p
+		} //end of .working
+
+		> .info {
+			background-color: darken($sec-color-2, 10%);
+
+			> .container {
+				position: relative;
+				padding: 45px 7% 40px;
+
+				h2,
+				p {
+					margin-bottom: 15px;
+					color: #aaa;
+					font-size: 13px;
+
+					> a {
+						color: #aaa;
+					}
+
+					> .bar {
+						margin: 0 10px;
+					}
+				}
+
+				h2:after {
+					display: block;
+					position: absolute;
+					right: 7%;
+					@include transTop;
+
+					width: 53px;
+					height: 68px;
+					background-image: url(./../images/footer_logo.png);
+					content: '';
+
+					@media #{$mobile} {
+						display: none;
+					}
+				}
+
+				@media #{$mobile} {
+					> p.iam_2 > span {
+						display: block;
+					}
+				}
+			} //end of .container
+		} //end of .info
+	} //end of footer
+
+	> aside {
+		display: none;
+		position: fixed;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 1000;
+
+		> .top {
+			display: block;
+			width: 28px;
+			height: 28px;
+			line-height: 28px;
+			text-align: center;
+			background-color: $pri-color-2;
+			> i {
+				color: $pri-color-3;
+			}
+		} //end of .top
+	} //end of aside
 } //end of #wrap

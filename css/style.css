@@ -306,6 +306,7 @@
   padding-top: 80px;
 }
 #wrap header ~ section > h2 {
+  margin-bottom: 72px;
   color: #2c3e50;
   font-size: 50px;
   line-height: 50px;
@@ -445,6 +446,110 @@
   color: #52b3d9;
   font-family: "Font Awesome 5 Free";
   content: "\f14a";
+}
+#wrap #skill > article > h3 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 80px;
+  line-height: 48px;
+  text-align: center;
+}
+#wrap #skill > article > h3 > span {
+  display: block;
+}
+#wrap #skill > article > ol {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+#wrap #skill > article > ol > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 45%;
+  height: 150px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+#wrap #skill > article > ol > li > h4 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 400;
+}
+#wrap #skill > article > ol > li > p {
+  line-height: 1.6;
+}
+#wrap #skill > article.skill-1 {
+  margin-bottom: 120px;
+}
+#wrap #skill > article.skill-1 li:first-child {
+  padding-left: 360px;
+  background-position: 180px 0;
+  background-image: url("../images/skill/skill01.png");
+}
+#wrap #skill > article.skill-1 li:last-child {
+  padding-left: 180px;
+  background-image: url("../images/skill/skill02.png");
+}
+#wrap #skill > article.skill-2 li:first-child {
+  padding-left: 360px;
+  background-position: 180px 0;
+  background-image: url("../images/skill/skill03.png");
+}
+#wrap #skill > article.skill-2 li:last-child {
+  padding-left: 180px;
+  background-image: url("../images/skill/skill04.png");
+}
+#wrap #ability {
+  background-color: #1a1a1a;
+  margin-top: 100px;
+}
+#wrap #ability > h2 {
+  color: #ffffff;
+}
+#wrap #ability > .ability-container {
+  padding-bottom: 50px;
+}
+#wrap #ability > .ability-container > .stick {
+  display: flex;
+  justify-content: space-around;
+}
+#wrap #ability > .ability-container > .stick > .stick-container {
+  width: 43%;
+}
+#wrap #ability > .ability-container > .stick > .stick-container > .item {
+  display: flex;
+  padding-bottom: 20px;
+}
+#wrap #ability > .ability-container > .stick > .stick-container > .item > h3 {
+  width: 17%;
+  padding-right: 8%;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 10px;
+  text-align: right;
+}
+#wrap #ability > .ability-container > .stick > .stick-container > .item > .progress {
+  position: relative;
+  width: 75%;
+  height: 20px;
+  background-color: #333333;
+}
+#wrap #ability > .ability-container > .stick > .stick-container > .item > .progress > .bar {
+  width: 0;
+  height: 100%;
+  background-color: #52b3d9;
+  transition: all 2s ease-in-out;
+}
+#wrap #ability > .ability-container > .stick > .stick-container > .item > .progress > .bar > span {
+  position: absolute;
+  right: 15px;
+  color: #ffffff;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+#wrap #ability > .ability-container > .stick > .stick-container > .item:last-child {
+  padding-bottom: 0;
 }
 #wrap > footer {
   min-width: 1200px;

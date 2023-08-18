@@ -5,7 +5,7 @@ $(function () {
 	$loading.delay(250).fadeOut(800);
 });
 
-//
+// 메뉴 스크롷
 $(function () {
 	const $h1 = $('h1');
 	const $home = $('#home');
@@ -139,4 +139,19 @@ $(function () {
 			evt.preventDefault();
 			$('html,body').stop().animate({ scrollTop: 0 });
 		});
+});
+
+//ability 영역
+$(function () {
+	$(window).on('scroll', function () {
+		const scrollTop = $(this).scrollTop();
+
+		if (scrollTop > $('#ability').offset().top - window.innerHeight + 400) {
+			$('#ability .bar').each(function () {
+				$(this).width($(this).children('span').text());
+			});
+		} else if (scrollTop < $('#ability').offset().top - window.innerHeight) {
+			$('#ability .bar').width(0); //막대그래프 리셋
+		}
+	});
 });

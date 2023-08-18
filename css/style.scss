@@ -351,6 +351,7 @@ $mobile: 'screen and (max-width:640px)';
 		// outline: 1px solid red;
 
 		> h2 {
+			margin-bottom: 72px;
 			color: $pri-color-1;
 			font-size: 50px;
 			line-height: 50px;
@@ -365,6 +366,7 @@ $mobile: 'screen and (max-width:640px)';
 			}
 		} //end of h2
 	} //end of header ~ section
+
 	#aboutme {
 		> .container {
 			display: flex;
@@ -454,8 +456,7 @@ $mobile: 'screen and (max-width:640px)';
 					@media #{$mobile} {
 						padding: 0 5%;
 					}
-					@media #{$mobile} {
-					}
+
 					> h3 {
 						margin-bottom: 30px;
 						font-weight: 500;
@@ -499,6 +500,120 @@ $mobile: 'screen and (max-width:640px)';
 			} //end of .biography
 		} //end of .container
 	} //end of #aboutme
+
+	#skill {
+		> article {
+			> h3 {
+				font-size: 32px;
+				font-weight: 400;
+				margin-bottom: 80px;
+				line-height: 48px;
+				text-align: center;
+				> span {
+					display: block;
+				}
+			}
+			> ol {
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-around;
+				> li {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					width: 45%;
+					height: 150px;
+					// border: 1px solid #f00;
+					box-sizing: border-box;
+					background-repeat: no-repeat;
+					> h4 {
+						margin-bottom: 30px;
+						font-size: 24px;
+						font-weight: 400;
+					}
+					> p {
+						line-height: 1.6;
+					}
+				}
+			}
+			&.skill-1 {
+				margin-bottom: 120px;
+			}
+
+			&.skill-1 li:first-child {
+				padding-left: 360px;
+				background-position: 180px 0;
+				background-image: url('../images/skill/skill01.png');
+			}
+			&.skill-1 li:last-child {
+				padding-left: 180px;
+				background-image: url('../images/skill/skill02.png');
+			}
+			&.skill-2 li:first-child {
+				padding-left: 360px;
+				background-position: 180px 0;
+				background-image: url('../images/skill/skill03.png');
+			}
+			&.skill-2 li:last-child {
+				padding-left: 180px;
+				background-image: url('../images/skill/skill04.png');
+			}
+		}
+	} //end of #skill
+
+	#ability {
+		background-color: darken($sec-color-2, 10%);
+		margin-top: 100px;
+		> h2 {
+			color: $pri-color-3;
+		}
+		> .ability-container {
+			padding-bottom: 50px;
+			> .stick {
+				display: flex;
+				justify-content: space-around;
+				> .stick-container {
+					width: 43%;
+					> .item {
+						display: flex;
+						padding-bottom: 20px;
+
+						> h3 {
+							width: 17%;
+							padding-right: 8%;
+							color: $pri-color-3;
+							font-weight: 600;
+							line-height: 10px;
+							text-align: right;
+						}
+						> .progress {
+							position: relative;
+							width: 75%;
+							height: 20px;
+							background-color: $sec-color-2;
+							> .bar {
+								// width: 95%;
+								width: 0; //js
+								height: 100%;
+								background-color: $pri-color-2;
+								transition: all 2s ease-in-out;
+								> span {
+									position: absolute;
+									right: 15px;
+									color: $pri-color-3;
+									@include transTop();
+								}
+							}
+						} //end of .progress
+						&:last-child {
+							padding-bottom: 0;
+						}
+					} //end of .item
+				} //end of .stick-container
+			} //end of .stick
+		} //end of .ability-container
+	} //end of #ability
+
 	> footer {
 		min-width: 1200px;
 

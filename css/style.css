@@ -447,10 +447,13 @@
   font-family: "Font Awesome 5 Free";
   content: "\f14a";
 }
+#wrap #skill > article.skill-1 {
+  margin-bottom: 120px;
+}
 #wrap #skill > article > h3 {
-  font-size: 32px;
-  font-weight: 400;
   margin-bottom: 80px;
+  font-weight: 400;
+  font-size: 32px;
   line-height: 48px;
   text-align: center;
 }
@@ -458,9 +461,15 @@
   display: block;
 }
 #wrap #skill > article > ol {
-  margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+@media screen and (max-width:640px) {
+  #wrap #skill > article > ol {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 #wrap #skill > article > ol > li {
   display: flex;
@@ -468,41 +477,58 @@
   justify-content: center;
   width: 45%;
   height: 150px;
-  box-sizing: border-box;
   background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+@media screen and (max-width:640px) {
+  #wrap #skill > article > ol > li {
+    width: 100%;
+  }
+  #wrap #skill > article > ol > li:first-child {
+    margin-bottom: 40px;
+  }
 }
 #wrap #skill > article > ol > li > h4 {
   margin-bottom: 30px;
-  font-size: 24px;
   font-weight: 400;
+  font-size: 24px;
 }
 #wrap #skill > article > ol > li > p {
   line-height: 1.6;
 }
-#wrap #skill > article.skill-1 {
-  margin-bottom: 120px;
-}
 #wrap #skill > article.skill-1 li:first-child {
   padding-left: 360px;
+  background-image: url(./../images/skill/skill01.png);
   background-position: 180px 0;
-  background-image: url("../images/skill/skill01.png");
+}
+@media screen and (max-width:640px) {
+  #wrap #skill > article.skill-1 li:first-child {
+    padding-left: 180px;
+    background-position: 0 0;
+  }
 }
 #wrap #skill > article.skill-1 li:last-child {
   padding-left: 180px;
-  background-image: url("../images/skill/skill02.png");
+  background-image: url(./../images/skill/skill02.png);
 }
 #wrap #skill > article.skill-2 li:first-child {
   padding-left: 360px;
+  background-image: url(./../images/skill/skill03.png);
   background-position: 180px 0;
-  background-image: url("../images/skill/skill03.png");
+}
+@media screen and (max-width:640px) {
+  #wrap #skill > article.skill-2 li:first-child {
+    padding-left: 180px;
+    background-position: 0 0;
+  }
 }
 #wrap #skill > article.skill-2 li:last-child {
   padding-left: 180px;
-  background-image: url("../images/skill/skill04.png");
+  background-image: url(./../images/skill/skill04.png);
 }
 #wrap #ability {
-  background-color: #1a1a1a;
   margin-top: 100px;
+  background-color: #1a1a1a;
 }
 #wrap #ability > h2 {
   color: #ffffff;
@@ -514,12 +540,28 @@
   display: flex;
   justify-content: space-around;
 }
+@media screen and (max-width:640px) {
+  #wrap #ability > .ability-container > .stick {
+    display: block;
+  }
+}
 #wrap #ability > .ability-container > .stick > .stick-container {
   width: 43%;
 }
+@media screen and (max-width:640px) {
+  #wrap #ability > .ability-container > .stick > .stick-container {
+    width: 100%;
+  }
+}
 #wrap #ability > .ability-container > .stick > .stick-container > .item {
   display: flex;
-  padding-bottom: 20px;
+  flex-flow: row nowrap;
+  margin-bottom: 40px;
+}
+@media screen and (max-width:640px) {
+  #wrap #ability > .ability-container > .stick > .stick-container > .item {
+    padding: 0 7%;
+  }
 }
 #wrap #ability > .ability-container > .stick > .stick-container > .item > h3 {
   width: 17%;
@@ -529,11 +571,17 @@
   line-height: 10px;
   text-align: right;
 }
+@media screen and (max-width:640px) {
+  #wrap #ability > .ability-container > .stick > .stick-container > .item > h3 {
+    font-size: 15px;
+  }
+}
 #wrap #ability > .ability-container > .stick > .stick-container > .item > .progress {
   position: relative;
   width: 75%;
-  height: 20px;
+  height: 10px;
   background-color: #333333;
+  border-radius: 3px;
 }
 #wrap #ability > .ability-container > .stick > .stick-container > .item > .progress > .bar {
   width: 0;
@@ -544,12 +592,77 @@
 #wrap #ability > .ability-container > .stick > .stick-container > .item > .progress > .bar > span {
   position: absolute;
   right: 15px;
+  top: -20px;
   color: #ffffff;
-  top: 50%;
-  transform: translate(0, -50%);
 }
-#wrap #ability > .ability-container > .stick > .stick-container > .item:last-child {
-  padding-bottom: 0;
+#wrap #ability > .resume {
+  padding: 50px 0;
+  background-color: #ffffff;
+}
+#wrap #ability > .resume > div {
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
+}
+@media screen and (max-width:640px) {
+  #wrap #ability > .resume > div {
+    display: block;
+  }
+}
+#wrap #ability > .resume > div > .frame {
+  overflow: hidden;
+  width: 520px;
+  height: 340px;
+  margin-right: 50px;
+  border: 1px solid #000;
+}
+@media screen and (max-width:640px) {
+  #wrap #ability > .resume > div > .frame {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+#wrap #ability > .resume > div > .frame > img {
+  display: block;
+  width: 100%;
+  margin-top: -100px;
+}
+#wrap #ability > .resume > div > .iam {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#wrap #ability > .resume > div > .iam > p {
+  line-height: 1.8;
+}
+@media screen and (max-width:640px) {
+  #wrap #ability > .resume > div > .iam > p > br {
+    display: none;
+  }
+}
+#wrap #ability > .resume > div > .iam > p > span {
+  display: block;
+}
+@media screen and (max-width:640px) {
+  #wrap #ability > .resume > div > .iam > p > span {
+    display: inline;
+  }
+}
+#wrap #ability > .resume > div > .iam > a {
+  display: block;
+  width: 260px;
+  height: 40px;
+  color: #ffffff;
+  line-height: 40px;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+@media screen and (max-width:640px) {
+  #wrap #ability > .resume > div > .iam > a {
+    display: none;
+  }
 }
 #wrap > footer {
   min-width: 1200px;
@@ -560,7 +673,7 @@
   }
 }
 #wrap > footer > .working {
-  border-top: 1px solid black;
+  border-top: 1px solid #eeeeee;
 }
 #wrap > footer > .working > p {
   height: 80px;

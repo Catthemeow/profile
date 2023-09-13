@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>wow</title>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/animate.css" />
+		<style>
+			#wrap {
+				width: 980px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			h1 {
+				margin-top: 60px;
+			}
+
+			section {
+				height: 300px;
+				margin: 60px 0;
+				line-height: 1.5;
+			}
+
+			.purple {
+				background-color: #9b59b6;
+			}
+			.blue {
+				background-color: #3498db;
+			}
+			.green {
+				background-color: #2ecc71;
+			}
+		</style>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/wow.min.js"></script>
+		<script>
+			$(function () {
+				new WOW().init(); //WOW플러그인을 사용하기위한 가장간결한 구문
+			});
+			/*
+            1. 적용할박스에 wow클래스를붙인다.
+            2. 적용할 효과를 클래스에 붙인다.
+            3. 자바스크립트에서 new WOW().init(); 실행
+            4. 상업적으로 사용만안하면 무료이다.
+            5. data-wow-delay="2000" 2초후에 실행한다는 구문
+            */
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<header>
+				<h1 class="text-center">WOW 플러그인 사용법</h1>
+			</header>
+			<section class="green wow backInRight"></section>
+			<section class="blue wow bounceIn"></section>
+			<section class="purple wow fadeInUp fadeIn"></section>
+			<section class="green"></section>
+			<section class="blue"></section>
+			<section class="purple"></section>
+		</div>
+	</body>
+</html>
